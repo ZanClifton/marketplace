@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-// import { Item } from './Item';
+import { Item } from "./Item";
 
 export const ItemList = () => {
   const [showItems, setShowItems] = useState([]);
@@ -7,20 +7,16 @@ export const ItemList = () => {
   useEffect(() => {
     fetch("https://marketplace-api-72935.herokuapp.com/api/items")
       .then((res) => {
-        // console.log(res);
         return res.json();
       })
       .then((data) => {
-        setShowItems(data);
-        //   console.log()
+        setShowItems(data.items);
       });
   }, []);
 
-  
   return (
-      <div>
-          {console.log(showItems.items)}
-        {/* {showItems[0]} */}
+    <div>
+      <Item items={showItems} />
     </div>
   );
 };

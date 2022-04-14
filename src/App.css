@@ -23,3 +23,28 @@ body {
   color: #f4f5f4;
   text-decoration: none;
 }
+.list-item {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list-item li {
+  width: calc(25% - 10px);
+  background-color: #f4f5f4;
+  margin-left: 10px;
+  margin-top: 10px;
+  padding: 10px;
+  list-style: none;
+  box-shadow: 3px 6px #888888;
+}
+
+.list-item li span {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.list-item li img {
+  width: 120px;
+  height: 90px;
+  box-shadow: 2px 3px #888888;
+}
