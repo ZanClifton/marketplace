@@ -6,6 +6,11 @@
 
 body {
   background-color: #a9a5a8;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h4 {
+  margin-bottom: 10px;
 }
 
 .navbar {
@@ -33,12 +38,20 @@ body {
   background-color: #f4f5f4;
   margin-left: 10px;
   margin-top: 10px;
+  margin-bottom: 5px;
   padding: 10px;
   list-style: none;
   box-shadow: 3px 6px #888888;
+  height: 280px;
 }
 
-.list-item li span {
+.list-item li p {
+  font-size: 14px;
+
+  margin-bottom: 10px;
+}
+
+span {
   font-size: 14px;
   font-weight: bold;
 }
@@ -47,4 +60,56 @@ body {
   width: 120px;
   height: 90px;
   box-shadow: 2px 3px #888888;
+}
+
+.list-item li .Link {
+  background-color: #fc7d1c;
+  padding: 10px;
+  color: #f4f5f4;
+  border: 1px solid #f4f5f4;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.list-item li button:hover {
+  background-color: #f78d39;
+}
+
+.item-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item {
+  display: grid;
+  grid-template-areas: "topleft-image topright-details" "bottom-description bottom-description ";
+  grid-template-columns: 2fr 1fr;
+  margin-top: 20px;
+  width: 60%;
+  border-radius: 5px;
+  background-color: #f4f5f4;
+  height: 500px;
+  box-shadow: 2px 3px #888888;
+}
+.item img {
+  grid-area: topleft-image;
+  width: 30%;
+  height: 150pxS;
+  margin: 10px;
+  box-shadow: 2px 3px #888888;
+}
+
+.top-left {
+  grid-area: topleft-image;
+}
+
+.top-right {
+  grid-area: topright-details;
+}
+
+.bottom {
+  grid-area: bottom-description;
 }

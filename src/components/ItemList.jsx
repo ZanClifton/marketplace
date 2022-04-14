@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { ItemPage } from "../routes/ItemPage";
 import { Item } from "./Item";
 
 export const ItemList = ({ category }) => {
@@ -6,10 +7,10 @@ export const ItemList = ({ category }) => {
   const [selectCategory, setSelectCategory] = useState("");
 
   useEffect(() => {
-    let fetchString = `https://marketplace-api-72935.herokuapp.com/api/items`
+    let fetchString = `https://marketplace-api-72935.herokuapp.com/api/items`;
 
     if (selectCategory !== "select") {
-      fetchString += `?category_name=${selectCategory}`
+      fetchString += `?category_name=${selectCategory}`;
     }
 
     fetch(fetchString)
@@ -21,14 +22,20 @@ export const ItemList = ({ category }) => {
       });
   }, [selectCategory]);
 
-  console.log(category, "<< category")
+  console.log(category, "<< category");
 
   return (
     <div>
-      <select name="selector" id="" onChange={(event) => {
-        setSelectCategory(event.target.value)
-      }}>
-        <option value="select" key="select">Select Category</option>
+      <select
+        name="selector"
+        id=""
+        onChange={(event) => {
+          setSelectCategory(event.target.value);
+        }}
+      >
+        <option value="select" key="select">
+          Select Category
+        </option>
         {category.map((cat) => {
           return (
             <option value={cat.category_name} key={cat.category_name}>
@@ -38,6 +45,7 @@ export const ItemList = ({ category }) => {
         })}
       </select>
       <Item items={showItems} />
+      <ItemPage items={showItems} />
     </div>
   );
 };

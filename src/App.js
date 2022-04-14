@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import { Home } from "./routes/Home";
 import { Basket } from "./routes/Basket";
 import { Profile } from "./routes/Profile";
-import { Item } from "./routes/Item";
+import { ItemPage } from "./routes/ItemPage";
 import { Previous } from "./routes/Previous";
 import { Signup } from "./routes/Signup";
 
@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/basket" element={<Basket />} />
-        <Route path="/items/:item" element={<Item />} />
+        <Route path="/items/:item_id" element={<ItemPage />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/previous" element={<Previous />} />
